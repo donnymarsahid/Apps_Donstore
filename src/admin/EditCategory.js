@@ -1,8 +1,14 @@
 import React from 'react';
 import api from '../api/database';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 function CardCategory({ category, number, refresh }) {
+  // Access Token
+  const token = localStorage.getItem('token');
+  if (!token) {
+    return <Redirect to="/login" />;
+  }
+
   async function deleted() {
     await api.delete(`/delete/${category.id_category}`);
     return refresh();

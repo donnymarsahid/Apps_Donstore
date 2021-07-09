@@ -2,6 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 function Navbar() {
+  const logout = () => {
+    return localStorage.clear('token');
+  };
+
   return (
     <>
       <nav class="navbar navbar-expand-lg " color-on-scroll="500">
@@ -40,7 +44,9 @@ function Navbar() {
               </li>
               <li class="nav-item">
                 <Link class="nav-link" to="/">
-                  <span class="no-icon">Log out</span>
+                  <span class="no-icon" onClick={logout}>
+                    Log out
+                  </span>
                 </Link>
               </li>
             </ul>

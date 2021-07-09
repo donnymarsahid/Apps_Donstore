@@ -5,6 +5,7 @@ import Sidebar from './components/Sidebar';
 import './components/style.css';
 import api from '../api/database';
 import CardCategory from './CardCategory';
+import { Redirect } from 'react-router-dom';
 
 export default class Dashboard extends Component {
   // Get Data Category
@@ -23,6 +24,12 @@ export default class Dashboard extends Component {
     const dataCategory = this.state.category.map((category, index) => {
       return <CardCategory category={category} key={category.id_category} number={index + 1} />;
     });
+
+    // Access Token
+    const token = localStorage.getItem('token');
+    if (!token) {
+      return <Redirect to="/login" />;
+    }
     return (
       <div>
         <div class="wrapper">

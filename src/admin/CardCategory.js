@@ -1,6 +1,12 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 
 function CardCategory({ category, number }) {
+  // Access Token
+  const token = localStorage.getItem('token');
+  if (!token) {
+    return <Redirect to="/login" />;
+  }
   console.log(number);
   return (
     <>

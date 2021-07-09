@@ -5,6 +5,7 @@ import Sidebar from './components/Sidebar';
 import './components/style.css';
 import api from '../api/database';
 import EditCategory from './EditCategory';
+import { Redirect } from 'react-router-dom';
 
 export default class CardEditCategory extends Component {
   // Get Data Category
@@ -20,6 +21,12 @@ export default class CardEditCategory extends Component {
   };
 
   render() {
+    // Access Token
+    const token = localStorage.getItem('token');
+    if (!token) {
+      return <Redirect to="/login" />;
+    }
+
     const dataCategory = this.state.category.map((category, index) => {
       return <EditCategory category={category} key={category.id_category} number={index + 1} refresh={this.componentDidMount} />;
     });
