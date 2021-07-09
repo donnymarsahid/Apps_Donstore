@@ -30,12 +30,23 @@ router.post('/addCategory', (req, res) => {
   });
 });
 
-// Update category
+// Get Data Update
 router.get('/editCategory/:idEdit', (req, res) => {
   const idEdit = req.params.idEdit;
   dbConnection.query('SELECT * FROM category WHERE id_category = ? ', idEdit, (err, results) => {
     if (err) throw err;
     res.send(results[0]);
+  });
+});
+
+// Update
+router.put('/updateCategory/:idUpdate', (req, res) => {
+  const idUpdate = req.params.idUpdate;
+  const name = req.body.name;
+  const images = req.body.images;
+  dbConnection.query('UPDATE category SET name = ? , images = ? WHERE id_category = ?  ', [name, images, idUpdate], (err, results) => {
+    if (err) throw err;
+    res.send({ message: 'success updated' });
   });
 });
 

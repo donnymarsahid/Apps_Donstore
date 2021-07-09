@@ -1,6 +1,9 @@
 const express = require('express');
 const app = express();
 
+// Get Data From Folder Public
+app.use(express.static('public'));
+
 // Get Router
 const indexRouter = require('./routes/index');
 const loginRouter = require('./routes/login');
