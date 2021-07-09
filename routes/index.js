@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const cors = require('cors');
+const bcrypt = require('bcrypt');
 
 // Get Database
 const dbConnection = require('../lib/database');
@@ -8,6 +9,8 @@ const dbConnection = require('../lib/database');
 // Connect to Client
 router.use(cors());
 router.use(express.json());
+
+// Protect Password / Hashing
 
 // Get data category
 router.get('/category', (req, res) => {
@@ -23,7 +26,7 @@ router.post('/addCategory', (req, res) => {
   const images = req.body.images;
   dbConnection.query('INSERT INTO category SET name = ? , images = ? ', [name, images], (err, results) => {
     if (err) throw err;
-    res.send('Success Added');
+    res.send({ message: 'success added' });
   });
 });
 
