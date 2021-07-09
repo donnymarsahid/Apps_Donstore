@@ -5,12 +5,14 @@ import Dashboard from './admin/Dashboard';
 import UpdateCategory from './admin/updateCategory/UpdateCategory';
 import Login from './login/Login';
 import NoMatch from './404/NoMatch';
+import User from './users/User';
 
 function App() {
   return (
     <>
       <Router>
         <Switch>
+          <Route path="/" exact component={User} />
           <Route path="/login" exact component={Login} />
           <Route path="/admin" exact component={Dashboard} />
           <Route path="/addCategory" component={AddCategory} />

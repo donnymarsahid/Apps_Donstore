@@ -7,7 +7,6 @@ function CardCategory({ category, number }) {
   if (!token) {
     return <Redirect to="/login" />;
   }
-  console.log(number);
   return (
     <>
       <tr>

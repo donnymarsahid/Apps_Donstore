@@ -25,9 +25,9 @@ export default class AddCategory extends Component {
   submitAdd = async (e) => {
     e.preventDefault();
     const response = await api.post('/addCategory', this.state);
-    if (response.data) {
+    if (response.data.message) {
       this.setState({
-        status: response.data,
+        status: response.data.message,
       });
     }
   };

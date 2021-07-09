@@ -10,8 +10,10 @@ function CardCategory({ category, number, refresh }) {
   }
 
   async function deleted() {
-    await api.delete(`/delete/${category.id_category}`);
-    return refresh();
+    if (window.confirm('Are You Sure ?')) {
+      await api.delete(`/delete/${category.id_category}`);
+      return refresh();
+    }
   }
   return (
     <>

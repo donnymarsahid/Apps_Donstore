@@ -2,9 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 function Navbar() {
-  const logout = () => {
-    return localStorage.clear('token');
-  };
+  async function logout() {
+    if (window.confirm('Are You Sure ?')) {
+      localStorage.clear('token');
+    }
+  }
 
   return (
     <>
@@ -43,7 +45,7 @@ function Navbar() {
                 </div>
               </li>
               <li class="nav-item">
-                <Link class="nav-link" to="/">
+                <Link class="nav-link">
                   <span class="no-icon" onClick={logout}>
                     Log out
                   </span>

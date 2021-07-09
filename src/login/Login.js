@@ -19,8 +19,8 @@ function Login() {
     if (response.data.message) {
       setStatusLogin(response.data.message);
     } else {
-      setRedirect(true);
       localStorage.setItem('token', response.data.token);
+      setRedirect(true);
     }
   };
 
