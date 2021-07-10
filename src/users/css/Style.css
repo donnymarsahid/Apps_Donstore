@@ -218,30 +218,45 @@ nav {
 
 /* Jumbotron Women and Man End */
 /* Leading Brand Start */
-.leading-brand {
-  margin-top: 100px;
-}
-.leading-brand h3 {
+.text-leading h3 {
   text-transform: uppercase;
   font-weight: 600;
 }
-.leading-brand h3::before {
+.text-leading h3:after {
+  display: inline-block;
+  margin: 0 0 8px 20px;
+  height: 5px;
   content: ' ';
-  border-bottom: 5px solid #fff;
-  display: block;
+  text-shadow: none;
+  background-color: #3e3d3d;
+  width: 140px;
 }
-.row-slick {
+.row-leading-brand {
   overflow-x: hidden;
   height: 700px;
 }
-
-.row-slick .col-md-12 {
+.slick-arrow.slick-prev,
+.slick-arrow.slick-next {
+  font-size: 50px;
+  width: 50px;
+  height: 50px;
+  z-index: 1;
+}
+.slick-arrow.slick-prev {
+  margin-left: 50px !important;
+}
+.slick-arrow.slick-next {
+  margin-right: 50px !important;
+}
+button.slick-arrow:before {
+  font-size: 50px !important;
+}
+.row-leading-brand .col-md-12 {
   padding: 5px;
 }
 
-.row-slick .details img {
-  width: 100%;
-  height: 500px;
+.leading-brand {
+  margin: 100px 0 100px 0;
 }
 /* Leading Brand End */
 

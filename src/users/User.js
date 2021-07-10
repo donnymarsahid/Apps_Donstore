@@ -4,12 +4,20 @@ import './css/Style.css';
 import api from '../api/database';
 import { Person, Cart3, Instagram, Linkedin, Github } from 'react-bootstrap-icons';
 import { Carousel } from 'react-bootstrap';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
-
+import 'slick-carousel/slick/slick-theme.css';
+import 'slick-carousel/slick/slick.css';
+const settings = {
+  dots: true,
+  infinite: false,
+  speed: 500,
+  slidesToShow: 4,
+  slidesToScroll: 4,
+  arrow: true,
+};
 function User() {
   const [dataCategory, setDataCategory] = useState([]);
+  const [dataLeadingBrand, setDataLeadingBrand] = useState([]);
   const [index, setIndex] = useState(0);
 
   const handleSelect = (selectedIndex, e) => {
@@ -21,17 +29,13 @@ function User() {
     setDataCategory(response.data);
   }, []);
 
-  var settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 4,
-  };
+  api.get('/leadingBrand').then((response) => {
+    setDataLeadingBrand(response.data);
+  });
 
   return (
     <>
-      <nav className="fixed-top shadow-lg">
+      <nav className="fixed-top shadow-sm">
         <div class="nav-store">
           <div class="profile">
             <h3>
@@ -41,8 +45,8 @@ function User() {
           <div class="logo-nav-link">
             <img src={logo} alt="donstore" className="donstore" />
             <div class="link">
-              <a>Category</a>
-              <a>Store</a>
+              <a> Category</a>
+              <a> Store</a>
               <a>Collection</a>
             </div>
           </div>
@@ -56,7 +60,7 @@ function User() {
         <p>Various kinds of fashion are here</p>
         <a class="btn btn-lg">SHOW NOW</a>
       </div>
-      <div class="category">
+      <div class="category" style={{ margin: '10px' }}>
         <div class="text-category text-center">
           <h3>Category</h3>
         </div>
@@ -102,21 +106,24 @@ function User() {
       </div>
       <div class="leading-brand row-slick">
         <div class="container-fluid">
-          <div class="text-category ">
+          <div class="text-leading ">
             <h3>Leading Brand</h3>
           </div>
         </div>
-        <Slider {...settings}>
-          {dataCategory.map((category) => {
-            return (
-              <div class="col-md-12">
-                <div class="details">
-                  <img src={`http://localhost:3001/${category.images}`} />
+        {/* SLIDER START */}
+        <div className="row-leading-brand" style={{ margin: '10px' }}>
+          <Slider {...settings} className="row">
+            {dataLeadingBrand.map((brand) => {
+              return (
+                <div class="col-md-12">
+                  <img src={`http://localhost:3001/brand/${brand.images}`} alt={`http://localhost:3001/brand/${brand.images}`} width="100%" />
+                  <p>{brand.name}</p>
                 </div>
-              </div>
-            );
-          })}
-        </Slider>
+              );
+            })}
+          </Slider>
+        </div>
+        {/* SLIDER END  */}
       </div>
       <footer>
         <div class="footer-content">
