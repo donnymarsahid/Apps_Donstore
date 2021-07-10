@@ -13,7 +13,7 @@ router.use(express.json());
 // Protect Password / Hashing
 
 // Get data category
-router.get('/category', (req, res) => {
+router.get('/category', (req, res, next) => {
   dbConnection.query('SELECT * FROM category', (err, results) => {
     if (err) throw err;
     res.send(results);
@@ -21,7 +21,7 @@ router.get('/category', (req, res) => {
 });
 
 // Add category
-router.post('/addCategory', (req, res) => {
+router.post('/addCategory', (req, res, next) => {
   const name = req.body.name;
   const images = req.body.images;
   dbConnection.query('INSERT INTO category SET name = ? , images = ? ', [name, images], (err, results) => {
@@ -31,7 +31,7 @@ router.post('/addCategory', (req, res) => {
 });
 
 // Get Data Update
-router.get('/editCategory/:idEdit', (req, res) => {
+router.get('/editCategory/:idEdit', (req, res, next) => {
   const idEdit = req.params.idEdit;
   dbConnection.query('SELECT * FROM category WHERE id_category = ? ', idEdit, (err, results) => {
     if (err) throw err;
@@ -40,7 +40,7 @@ router.get('/editCategory/:idEdit', (req, res) => {
 });
 
 // Update
-router.put('/updateCategory/:idUpdate', (req, res) => {
+router.put('/updateCategory/:idUpdate', (req, res, next) => {
   const idUpdate = req.params.idUpdate;
   const name = req.body.name;
   const images = req.body.images;
@@ -51,11 +51,33 @@ router.put('/updateCategory/:idUpdate', (req, res) => {
 });
 
 // Delete category
-router.delete('/delete/:idDelete', (req, res) => {
+router.delete('/delete/:idDelete', (req, res, next) => {
   const idDelete = req.params.idDelete;
   dbConnection.query('DELETE FROM category WHERE id_category = ? ', idDelete, (err, results) => {
     if (err) throw err;
     res.send('Success Delete');
+  });
+});
+
+// Get Leading Brand
+router.get('/leadingBrand', (req, res, next) => {
+  dbConnection.query('SELECT * FROM leading_brand', (err, results) => {
+    if (err) throw err;
+    res.send(results);
+  });
+});
+
+// Add Leading Brand
+router.post('/addBrand', (req, res, next) => {
+  const dataBrand = {
+    name: req.body.name,
+    quantity: req.body.quantity,
+    price: req.body.price,
+    images: req.body.images,
+  };
+  dbConnection.query('INSERT INTO leading_brand SET ? ', dataBrand, (err, results) => {
+    if (err) throw err;
+    res.send({ message: 'Success Add Brand ' });
   });
 });
 
