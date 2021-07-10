@@ -3,18 +3,35 @@ import logo from './img/logo.svg';
 import './css/Style.css';
 import api from '../api/database';
 import { Person, Cart3, Instagram, Linkedin, Github } from 'react-bootstrap-icons';
+import { Carousel } from 'react-bootstrap';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import Slider from 'react-slick';
 
 function User() {
   const [dataCategory, setDataCategory] = useState([]);
+  const [index, setIndex] = useState(0);
+
+  const handleSelect = (selectedIndex, e) => {
+    setIndex(selectedIndex);
+  };
 
   useEffect(async () => {
     const response = await api.get('/category');
     setDataCategory(response.data);
   }, []);
 
+  var settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 4,
+  };
+
   return (
     <>
-      <nav>
+      <nav className="fixed-top shadow-lg">
         <div class="nav-store">
           <div class="profile">
             <h3>
@@ -43,40 +60,63 @@ function User() {
         <div class="text-category text-center">
           <h3>Category</h3>
         </div>
-        <div class="row row-category ">
+        <div class="row row-category  ">
           {dataCategory.map((category) => {
             return (
               <div class="col-md-3">
+                <p className="text-center">{category.name}</p>
+                <div class="overlay">
+                  <a class="btn btn-lg">SHOW NOW</a>
+                </div>
                 <img src={`http://localhost:3001/${category.images}`} alt={`http://localhost:3001/${category.images}`} />
               </div>
             );
           })}
         </div>
       </div>
-      <div class="brand ">
-        <div class="text-brand">
-          <div class="container-fluid">
+      <div class="women-man">
+        <Carousel fade activeIndex={index} onSelect={handleSelect}>
+          <Carousel.Item>
+            <div className="women d-block w-100" alt="First slide" />
+            <Carousel.Caption className="caption-women">
+              <div class="description">
+                <h3>there are some fashion</h3>
+                <a class="btn btn-style">
+                  <h3>FOR WOMEN</h3>
+                </a>
+              </div>
+            </Carousel.Caption>
+          </Carousel.Item>
+          <Carousel.Item>
+            <div className="man d-block w-100" alt="Second slide" />
+            <Carousel.Caption className="caption-women">
+              <div class="description">
+                <h3 className="fw-light">there are some fashion</h3>
+                <a class="btn btn-style">
+                  <h3>FOR MAN</h3>
+                </a>
+              </div>
+            </Carousel.Caption>
+          </Carousel.Item>
+        </Carousel>
+      </div>
+      <div class="leading-brand row-slick">
+        <div class="container-fluid">
+          <div class="text-category ">
             <h3>Leading Brand</h3>
           </div>
         </div>
-        <div class="row row-brand ">
+        <Slider {...settings}>
           {dataCategory.map((category) => {
             return (
-              <div class="col-md-3 mb-5">
-                <img src={`http://localhost:3001/${category.images}`} alt={`http://localhost:3001/${category.images}`} />
+              <div class="col-md-12">
+                <div class="details">
+                  <img src={`http://localhost:3001/${category.images}`} />
+                </div>
               </div>
             );
           })}
-          <div class="col-md-3">
-            <img src="" alt="" />
-          </div>
-          <div class="col-md-3">
-            <img src="" alt="" />
-          </div>
-          <div class="col-md-6 btn-see">
-            <button className="btn btn-see-more">see more</button>
-          </div>
-        </div>
+        </Slider>
       </div>
       <footer>
         <div class="footer-content">

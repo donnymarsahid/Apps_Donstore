@@ -17,7 +17,7 @@ nav {
   width: 95%;
   margin: auto;
   align-items: center;
-  padding: 10px;
+  padding: 20px 0 15px 0;
 }
 
 .logo-nav-link .link {
@@ -48,6 +48,11 @@ nav {
 
 .donstore {
   cursor: pointer;
+  width: 80%;
+}
+
+.logo-nav-link {
+  text-align: center;
 }
 
 .basket-icons,
@@ -68,6 +73,7 @@ nav {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin-top: 124px;
 }
 
 .jumbotron p {
@@ -90,7 +96,7 @@ nav {
 
 /* Jumbotron End */
 
-/* Categor Start */
+/* Category Start */
 .category {
   margin-top: 130px;
 }
@@ -122,7 +128,8 @@ nav {
 }
 
 .category .col-md-3 {
-  padding: 0;
+  padding: 5px;
+  position: relative;
 }
 
 .category .col-md-3 img {
@@ -130,59 +137,113 @@ nav {
   height: 500px;
   cursor: pointer;
 }
-/* Categor End */
 
-/* Brand Start */
-.brand {
-  margin: 150px 0 150px 0;
-  overflow-x: hidden;
+.category .col-md-3 .btn {
+  border: 2px solid white;
+  transition: 0.2s;
+  color: white;
+}
+.category .col-md-3 .btn:hover {
+  border: 2px solid white;
+  background-color: #fff;
+  color: #3e3d3d;
 }
 
-.brand .col-md-3 {
-  padding: 0;
-}
-
-.brand .col-md-3 img {
-  width: 100%;
+.category .col-md-3 .overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 97%;
   height: 500px;
-  cursor: pointer;
-}
-
-.brand .col-md-6.btn-see {
+  position: absolute;
+  opacity: 0;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
-.brand .btn.btn-see-more {
-  text-transform: uppercase;
-  padding: 20px 60px;
-  font-size: 30px;
-  color: #3e3d3d;
-  border: solid 2px #3e3d3d;
-  transition: 0.2s;
+.category .col-md-3 .overlay:hover {
+  opacity: 1;
 }
-.brand .btn.btn-see-more:hover {
-  font-size: 30px;
-  color: #ffffff;
-  border: solid 2px #3e3d3d;
-  background-color: #3e3d3d;
-  box-shadow: 0 0 3px 5px rgba(0, 0, 0, 0.1);
+/* Category End */
+
+/* Jumbotron Women and Man Start */
+.women-man {
+  margin-top: 150px;
+}
+.women {
+  background-image: url('../img/women.svg');
+  height: 450px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.man {
+  background-image: url('../img/man.svg');
+  height: 450px;
+
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-.text-brand h3 {
-  font-weight: 600;
+.caption-women {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.caption-women .description {
   text-transform: uppercase;
+  padding-top: 50px;
 }
-.text-brand h3:after {
-  display: inline-block;
-  margin: 0 0 8px 20px;
-  height: 5px;
+.caption-man {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.caption-man .description {
+  text-transform: uppercase;
+  padding-top: 50px;
+}
+.women-man .btn-style {
+  background-color: transparent;
+  border: 3px solid white;
+  transition: 0.2s;
+}
+.women-man .btn-style:hover {
+  color: #3e3d3d !important;
+  border: 3px solid #fff;
+  background-color: #fff;
+}
+
+/* Jumbotron Women and Man End */
+/* Leading Brand Start */
+.leading-brand {
+  margin-top: 100px;
+}
+.leading-brand h3 {
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.leading-brand h3::before {
   content: ' ';
-  text-shadow: none;
-  background-color: #3e3d3d;
-  width: 140px;
+  border-bottom: 5px solid #fff;
+  display: block;
 }
-/* Brand End */
+.row-slick {
+  overflow-x: hidden;
+  height: 700px;
+}
+
+.row-slick .col-md-12 {
+  padding: 5px;
+}
+
+.row-slick .details img {
+  width: 100%;
+  height: 500px;
+}
+/* Leading Brand End */
 
 /* Footer Start */
 footer {
