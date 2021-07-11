@@ -1,0 +1,50 @@
+/* Mobile Start */
+@media (max-width: 576px) {
+  .profile,
+  .logo-nav-link .link {
+    display: none;
+  }
+  .donstore {
+    width: 100%;
+    margin-left: 8px;
+    box-sizing: border-box;
+  }
+  .logo-nav-link {
+    padding: 0;
+    width: 35%;
+    order: 2;
+  }
+  .nav-store {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .basket {
+    display: flex;
+    order: 3;
+    height: 30px;
+  }
+
+  .basket .basket-icon {
+    width: 43%;
+  }
+  .basket p {
+    font-size: 17px;
+  }
+  .hamburger-menu {
+    order: 1;
+    cursor: pointer;
+  }
+  .jumbotron {
+    margin-top: 75px;
+  }
+}
+/* Mobile End */
+@media (min-width: 768px) {
+  .hamburger-menu {
+    display: none;
+  }
+  .basket {
+    display: flex;
+  }
+}

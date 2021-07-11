@@ -96,9 +96,78 @@ nav {
 
 /* Jumbotron End */
 
-/* Category Start */
+/* Leading Brand Start */
+.leading-brand {
+  margin-top: 80px;
+  overflow-x: hidden;
+}
+.text-brand h3 {
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.text-brand h3:after {
+  display: inline-block;
+  margin: 0 0 8px 20px;
+  height: 5px;
+  content: ' ';
+  text-shadow: none;
+  background-color: #3e3d3d;
+  width: 140px;
+}
+
+.leading-brand .col-md-3 img {
+  width: 100%;
+  transition: 0.2s;
+  cursor: pointer;
+}
+.leading-brand .col-md-3 img:hover {
+  opacity: 0.8;
+}
+
+.leading-brand .col-md-3 {
+  padding: 5px;
+}
+/* Leading Brand End */
+/* Jumbotron Content Start */
+.jumbotron-content {
+  margin-top: 80px;
+}
+.jumbotron-content .women {
+  background-image: url('../img/women.svg');
+  height: 450px;
+}
+.jumbotron-content .man {
+  background-image: url('../img/man.svg');
+  height: 450px;
+}
+.jumbotron-content .container-carousel {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 80px;
+}
+.jumbotron-content .container-carousel .content {
+  text-transform: uppercase;
+}
+
+.jumbotron-content .container-carousel .content .btn {
+  padding: 10px 30px;
+  border: 2px solid white;
+}
+.jumbotron-content .container-carousel .content .btn:hover {
+  border: 2px solid white;
+  background-color: white;
+  color: #3e3d3d;
+}
+ol.carousel-indicators {
+  display: none !important;
+}
+/* Jumbotron Content End */
+/* Slider Category Start */
 .category {
-  margin-top: 130px;
+  margin: 100px 0 100px;
 }
 .text-category h3 {
   text-transform: uppercase;
@@ -113,127 +182,19 @@ nav {
   background-color: #3e3d3d;
   width: 140px;
 }
-.text-category h3:before {
-  display: inline-block;
-  margin: 0 20px 8px 0;
-  height: 5px;
-  content: ' ';
-  text-shadow: none;
-  background-color: #3e3d3d;
-  width: 140px;
-}
-
-.category {
+.row-category {
   overflow-x: hidden;
 }
-
-.category .col-md-3 {
+.row-category .col-md-12 {
   padding: 5px;
-  position: relative;
 }
-
-.category .col-md-3 img {
+.row-category .col-md-12 img {
   width: 100%;
-  height: 500px;
+  transition: 0.2s;
   cursor: pointer;
 }
-
-.category .col-md-3 .btn {
-  border: 2px solid white;
-  transition: 0.2s;
-  color: white;
-}
-.category .col-md-3 .btn:hover {
-  border: 2px solid white;
-  background-color: #fff;
-  color: #3e3d3d;
-}
-
-.category .col-md-3 .overlay {
-  background-color: rgba(0, 0, 0, 0.5);
-  width: 97%;
-  height: 500px;
-  position: absolute;
-  opacity: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-.category .col-md-3 .overlay:hover {
-  opacity: 1;
-}
-/* Category End */
-
-/* Jumbotron Women and Man Start */
-.women-man {
-  margin-top: 150px;
-}
-.women {
-  background-image: url('../img/women.svg');
-  height: 450px;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-.man {
-  background-image: url('../img/man.svg');
-  height: 450px;
-
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-.caption-women {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.caption-women .description {
-  text-transform: uppercase;
-  padding-top: 50px;
-}
-.caption-man {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.caption-man .description {
-  text-transform: uppercase;
-  padding-top: 50px;
-}
-.women-man .btn-style {
-  background-color: transparent;
-  border: 3px solid white;
-  transition: 0.2s;
-}
-.women-man .btn-style:hover {
-  color: #3e3d3d !important;
-  border: 3px solid #fff;
-  background-color: #fff;
-}
-
-/* Jumbotron Women and Man End */
-/* Leading Brand Start */
-.text-leading h3 {
-  text-transform: uppercase;
-  font-weight: 600;
-}
-.text-leading h3:after {
-  display: inline-block;
-  margin: 0 0 8px 20px;
-  height: 5px;
-  content: ' ';
-  text-shadow: none;
-  background-color: #3e3d3d;
-  width: 140px;
-}
-.row-leading-brand {
-  overflow-x: hidden;
-  height: 700px;
+.row-category .col-md-12 img:hover {
+  opacity: 0.8;
 }
 .slick-arrow.slick-prev,
 .slick-arrow.slick-next {
@@ -251,21 +212,28 @@ nav {
 button.slick-arrow:before {
   font-size: 50px !important;
 }
-.row-leading-brand .col-md-12 {
-  padding: 5px;
-}
 
-.leading-brand {
-  margin: 100px 0 100px 0;
+/* Slider Category End */
+/* Promo Start */
+.promo {
+  margin-bottom: 100px;
+  text-transform: uppercase;
 }
-/* Leading Brand End */
-
+.promo .btn-sign-up {
+  padding: 10px 20px;
+  background-color: #3e3d3d;
+  color: white;
+}
+.promo .btn-sign-up:hover {
+  background-color: #2b2a2a;
+  color: white;
+}
+/* Promo End */
 /* Footer Start */
 footer {
   overflow-x: hidden;
   height: 200px;
 }
-
 footer .footer-content {
   color: white;
   height: 100%;
