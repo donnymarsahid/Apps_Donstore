@@ -44,6 +44,12 @@
   #details-nav.showDetailsNav {
     display: none;
   }
+  #details-store {
+    display: none;
+  }
+  #details-store.showDetailsNav {
+    display: none;
+  }
 }
 /* Mobile End */
 @media (min-width: 576px) {
