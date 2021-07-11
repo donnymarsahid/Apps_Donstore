@@ -59,25 +59,25 @@ router.delete('/delete/:idDelete', (req, res, next) => {
   });
 });
 
-// Get Leading Brand
-router.get('/leadingBrand', (req, res, next) => {
-  dbConnection.query('SELECT * FROM leading_brand', (err, results) => {
+// Get Leading Collections
+router.get('/collections', (req, res, next) => {
+  dbConnection.query('SELECT * FROM collections', (err, results) => {
     if (err) throw err;
     res.send(results);
   });
 });
 
-// Add Leading Brand
-router.post('/addBrand', (req, res, next) => {
-  const dataBrand = {
+// Add Leading Collections
+router.post('/addCollections', (req, res, next) => {
+  const dataCollections = {
     name: req.body.name,
     quantity: req.body.quantity,
     price: req.body.price,
     images: req.body.images,
   };
-  dbConnection.query('INSERT INTO leading_brand SET ? ', dataBrand, (err, results) => {
+  dbConnection.query('INSERT INTO collections SET ? ', dataCollections, (err, results) => {
     if (err) throw err;
-    res.send({ message: 'Success Add Brand ' });
+    res.send({ message: 'Success Add Collection ' });
   });
 });
 
