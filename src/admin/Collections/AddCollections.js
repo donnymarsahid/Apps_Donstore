@@ -5,7 +5,7 @@ import Sidebar from '../components/Sidebar';
 import Footer from '../components/Footer';
 import { Redirect } from 'react-router-dom';
 
-export default class AddCategory extends Component {
+export default class AddCollections extends Component {
   // Add Post Category to Database
   state = {
     name: '',
@@ -16,17 +16,17 @@ export default class AddCategory extends Component {
   };
 
   // Get Value Input
-  addBrandForm = (e) => {
+  addCollection = (e) => {
     this.setState({ [e.target.name]: e.target.value });
   };
-  addBrandImages = (e) => {
+  addCollectionImages = (e) => {
     this.setState({ [e.target.name]: e.target.files[0].name });
   };
 
   // Event Submit
   submitAdd = async (e) => {
     e.preventDefault();
-    const response = await api.post('/addBrand', this.state);
+    const response = await api.post('/addCollections', this.state);
     if (response.data.message) {
       this.setState({
         status: response.data.message,
@@ -54,7 +54,7 @@ export default class AddCategory extends Component {
             {/* addCategory-content Start */}
             <div class="content">
               <div class="container-fluid ">
-                <h3>Add Category</h3>
+                <h3>Add Collections</h3>
                 {this.state.status && (
                   <div class="alert alert-success" role="alert">
                     {this.state.status}
@@ -65,36 +65,13 @@ export default class AddCategory extends Component {
                     <label for="name" class="form-label">
                       Name :
                     </label>
-                    <input type="text" class="form-control" id="name" name="name" onChange={this.addBrandForm} autoComplete="off" />
-                  </div>
-                  <div class="mb-3">
-                    <label for="quantity" class="form-label">
-                      Quantity :
-                    </label>
-                    <input
-                      type="number"
-                      class="form-control"
-                      id="quantity"
-                      name="quantity"
-                      onChange={(e) => {
-                        this.setState({
-                          quantity: e.target.value,
-                        });
-                      }}
-                      autoComplete="off"
-                    />
-                  </div>
-                  <div class="mb-3">
-                    <label for="price" class="form-label">
-                      Price :
-                    </label>
-                    <input type="number" class="form-control" id="price" name="price" onChange={this.addBrandForm} autoComplete="off" />
+                    <input type="text" class="form-control" id="name" name="name" onChange={this.addCollection} autoComplete="off" />
                   </div>
                   <div class="mb-3">
                     <label for="images" class="form-label">
                       Images :
                     </label>
-                    <input type="file" class="form-control" id="images" name="images" onChange={this.addBrandImages} />
+                    <input type="file" class="form-control" id="images" name="images" onChange={this.addCollectionImages} />
                   </div>
                   <button type="submit" class="btn btn-primary">
                     Submit

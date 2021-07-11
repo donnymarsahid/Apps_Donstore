@@ -24,6 +24,10 @@ function Login() {
     }
   };
 
+  api.get('/category/').then((response) => {
+    console.log(response);
+  });
+
   return (
     <Fragment>
       {redirect && <Redirect to="/admin" />}

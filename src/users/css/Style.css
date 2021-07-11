@@ -92,16 +92,16 @@ nav {
 
 /* Jumbotron End */
 
-/* Leading Brand Start */
-.leading-brand {
+/* Collections Start */
+.collections {
   margin-top: 80px;
   overflow-x: hidden;
 }
-.text-brand h3 {
+.text-collection h3 {
   text-transform: uppercase;
   font-weight: 600;
 }
-.text-brand h3:after {
+.text-collection h3:after {
   display: inline-block;
   margin: 0 0 8px 20px;
   height: 5px;
@@ -111,19 +111,19 @@ nav {
   width: 140px;
 }
 
-.leading-brand .col-md-3 img {
+.collections .col-md-3 img {
   width: 100%;
   transition: 0.2s;
   cursor: pointer;
 }
-.leading-brand .col-md-3 img:hover {
+.collections .col-md-3 img:hover {
   opacity: 0.8;
 }
 
-.leading-brand .col-md-3 {
+.collections .col-md-3 {
   padding: 5px;
 }
-/* Leading Brand End */
+/* Collections End */
 /* Jumbotron Content Start */
 .jumbotron-content {
   margin-top: 80px;
@@ -180,6 +180,7 @@ ol.carousel-indicators {
 }
 .row-category {
   overflow-x: hidden;
+  height: 600px;
 }
 .row-category .col-md-12 {
   padding: 5px;

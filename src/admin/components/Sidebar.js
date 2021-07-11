@@ -30,13 +30,13 @@ function Sidebar() {
             </li>
             <hr style={{ backgroundColor: 'white' }} />
             <li>
-              <Link class="nav-link" to="/addBrand">
-                <p style={{ color: 'white', fontWeight: '500', fontSize: '15px' }}>Add Leading Brand</p>
+              <Link class="nav-link" to="/addCollections">
+                <p style={{ color: 'white', fontWeight: '500', fontSize: '15px' }}>Add Collections</p>
               </Link>
             </li>
             <li>
               <Link class="nav-link" to="/editBrand">
-                <p style={{ color: 'white', fontWeight: '500', fontSize: '15px' }}>Edit Leading Brand</p>
+                <p style={{ color: 'white', fontWeight: '500', fontSize: '15px' }}>Edit Collections</p>
               </Link>
             </li>
           </ul>

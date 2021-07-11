@@ -14,7 +14,7 @@ export default class Dashboard extends Component {
   };
 
   async componentDidMount() {
-    const response = await api.get('/category');
+    const response = await api.get('/category/');
     this.setState({
       category: response.data,
     });

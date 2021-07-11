@@ -3,58 +3,18 @@ import logo from '../img/logo.svg';
 import { Person, Cart3, List } from 'react-bootstrap-icons';
 import '../css/Style.css';
 import '../css/Responsive.css';
-import svg1 from '../img/1.svg';
-import svg2 from '../img/2.svg';
-import svg3 from '../img/3.svg';
-import $ from 'jquery';
+import LinkCategory from './Link Nav/LinkCategory';
+import LinkStore from './Link Nav/LinkStore';
 
 function Navbar() {
-  $(document).ready(function () {
-    $('.link-category').hover(() => {
-      $('#details-nav').addClass('showDetailsNav');
-    });
-    $('.showDetailsNav').hover(
-      () => {
-        $('#details-nav').addClass('showDetailsNav');
-      },
-      () => {
-        $('#details-nav').removeClass('showDetailsNav');
-      }
-    );
-  });
   return (
     <>
-      {/* Details Navbar Start */}
-      <nav class="details fixed-top" id="details-nav">
-        <div class="details-nav">
-          <div class="container-nav-details">
-            <div class="link-nav-details">
-              <div class="link-nav">
-                <p className="text-uppercase fw-bolder">shop by category</p>
-                <p className="text-uppercase">all</p>
-                <p className="text-uppercase">women</p>
-                <p className="text-uppercase">man</p>
-                <p className="text-uppercase">jacket</p>
-              </div>
-            </div>
-            <div class="nav-images-sort">
-              <div class="1">
-                <img src={svg1} />
-                <p className="text-uppercase">women</p>
-              </div>
-              <div class="2">
-                <img src={svg2} />
-                <p className="text-uppercase">man</p>
-              </div>
-              <div class="3">
-                <img src={svg3} />
-                <p className="text-uppercase">all</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </nav>
-      {/* Details Navbar End */}
+      {/*Details Category Start */}
+      <LinkCategory />
+      {/*Details Category End */}
+      {/*Details Store Start */}
+      <LinkStore />
+      {/*Details Store End */}
       <nav className="fixed-top shadow-sm">
         <div class="nav-store">
           <div class="profile">
@@ -66,7 +26,7 @@ function Navbar() {
             <img src={logo} alt="donstore" className="donstore" />
             <div class="link">
               <a className="link-category">Category</a>
-              <a>Store</a>
+              <a className="link-store">Store</a>
               <a>Collection</a>
             </div>
           </div>

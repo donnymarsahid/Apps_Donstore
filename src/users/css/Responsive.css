@@ -85,4 +85,20 @@
   #details-nav.showDetailsNav {
     transform: translateY(0);
   }
+  .details-store {
+    margin-top: 123px;
+  }
+  .nav-images-sort-store {
+    display: flex;
+    justify-content: center;
+  }
+  .nav-images-sort-store img {
+    padding: 20px 0 20px 0;
+  }
+  #details-store {
+    transform: translateY(-100%);
+  }
+  #details-store.showDetailsStore {
+    transform: translateY(0);
+  }
 }

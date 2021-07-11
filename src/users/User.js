@@ -4,7 +4,6 @@ import api from '../api/database';
 import { Carousel } from 'react-bootstrap';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import women from './img/women.svg';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick-theme.css';
 import 'slick-carousel/slick/slick.css';
@@ -19,7 +18,7 @@ const settings = {
 };
 function User() {
   const [dataCategory, setDataCategory] = useState([]);
-  const [dataLeadingBrand, setDataLeadingBrand] = useState([]);
+  const [dataCollections, setDataCollections] = useState([]);
   const [index, setIndex] = useState(0);
 
   const handleSelect = (selectedIndex, e) => {
@@ -27,12 +26,13 @@ function User() {
   };
 
   useEffect(async () => {
-    const response = await api.get('/category');
+    const response = await api.get('/category/');
     setDataCategory(response.data);
+    console.log(response);
   }, []);
 
-  api.get('/leadingBrand').then((response) => {
-    setDataLeadingBrand(response.data);
+  api.get('/collections/').then((response) => {
+    setDataCollections(response.data);
   });
 
   return (
@@ -47,18 +47,18 @@ function User() {
         <a class="btn btn-lg">SHOW NOW</a>
       </div>
       {/* Jumbotron End */}
-      {/* Leading Brand Start */}
-      <div class="leading-brand">
+      {/* Collections Start */}
+      <div class="collections">
         <div class="container-fluid">
-          <div class="text-brand">
-            <h3>Leading Brand</h3>
+          <div class="text-collection">
+            <h3>Collections</h3>
           </div>
           <div class="row">
-            {dataLeadingBrand.map((brand) => {
+            {dataCollections.map((collections) => {
               return (
                 <div class="col-md-3">
-                  <img src={`http://localhost:3001/brand/${brand.images}`} alt={`http://localhost:3001/brand/${brand.images}`} />
-                  <p>{brand.name}</p>
+                  <img src={`http://localhost:3001/collections/${collections.images}`} alt={`http://localhost:3001/collections/${collections.images}`} />
+                  <p>{collections.name}</p>
                   <p className="text-decoration-underline">Shop Now</p>
                 </div>
               );
@@ -66,7 +66,7 @@ function User() {
           </div>
         </div>
       </div>
-      {/* Leading Brand End */}
+      {/* Collections End */}
       {/* Content Jumbotron Start */}
       <div class="jumbotron-content">
         <Carousel fade activeIndex={index} onSelect={handleSelect}>
@@ -102,7 +102,7 @@ function User() {
               {dataCategory.map((category) => {
                 return (
                   <div class="col-md-12">
-                    <img src={`http://localhost:3001/${category.images}`} alt={`http://localhost:3001/${category.images}`} />
+                    <img src={`http://localhost:3001/category/${category.images}`} alt={`http://localhost:3001/category/${category.images}`} />
                     <p className="text-decoration-underline text-uppercase">{category.name}</p>
                   </div>
                 );

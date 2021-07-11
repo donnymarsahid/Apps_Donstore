@@ -14,7 +14,7 @@ export default class CardEditCategory extends Component {
   };
 
   componentDidMount = async () => {
-    const response = await api.get('/category');
+    const response = await api.get('/category/');
     this.setState({
       category: response.data,
     });
