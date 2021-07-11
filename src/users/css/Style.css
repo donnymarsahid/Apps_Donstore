@@ -32,18 +32,14 @@ nav {
 .logo-nav-link .link a {
   cursor: pointer;
 }
-
+.link a:hover::after {
+  display: block;
+  content: '';
+  border-bottom: 1px solid #3e3d3d;
+}
 .logo-nav-link {
   padding: 0 10px 0 10px;
   box-sizing: border-box;
-}
-
-.link a:hover {
-  background-color: #3e3d3d;
-  color: white !important;
-  border-radius: 5px;
-  box-sizing: border-box;
-  padding: 0 5px 0 5px;
 }
 
 .donstore {

@@ -38,13 +38,51 @@
   .jumbotron {
     margin-top: 75px;
   }
+  #details-nav {
+    display: none;
+  }
+  #details-nav.showDetailsNav {
+    display: none;
+  }
 }
 /* Mobile End */
-@media (min-width: 768px) {
+@media (min-width: 576px) {
   .hamburger-menu {
     display: none;
   }
   .basket {
     display: flex;
+  }
+  .nav-store .offcanvas {
+    display: none;
+  }
+  .container-nav-details {
+    display: flex;
+    width: 70%;
+    margin: auto;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  .link-nav-details {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+  }
+  .nav-images-sort {
+    display: flex;
+    width: 70%;
+    justify-content: space-evenly;
+  }
+  nav.details {
+    margin-top: 123px;
+  }
+  .container-nav-details img {
+    width: 95%;
+  }
+  #details-nav {
+    transform: translateY(-100%);
+  }
+  #details-nav.showDetailsNav {
+    transform: translateY(0);
   }
 }
