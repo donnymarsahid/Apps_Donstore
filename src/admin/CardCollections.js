@@ -1,7 +1,7 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
 
-function CardCategory({ category, number }) {
+function CardCategory({ collections, number }) {
   // Access Token
   const token = localStorage.getItem('token');
   if (!token) {
@@ -11,10 +11,12 @@ function CardCategory({ category, number }) {
     <>
       <tr>
         <td>{number}</td>
-        <td>{category.name}</td>
-        <td>{category.created_at}</td>
-        <td>{category.update_at}</td>
-        <img src={`http://localhost:3001/category/${category.images}`} width="50%" />
+        <td>{collections.name}</td>
+        <td>{collections.created_at}</td>
+        <td>{collections.update_at}</td>
+        <td>
+          <img src={`http://localhost:3001/collections/${collections.images}`} width="50%" />
+        </td>
       </tr>
     </>
   );

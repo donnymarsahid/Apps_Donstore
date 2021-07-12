@@ -35,7 +35,7 @@ function Sidebar() {
               </Link>
             </li>
             <li>
-              <Link class="nav-link" to="/editBrand">
+              <Link class="nav-link" to="/editCollect">
                 <p style={{ color: 'white', fontWeight: '500', fontSize: '15px' }}>Edit Collections</p>
               </Link>
             </li>

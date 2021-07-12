@@ -6,7 +6,10 @@ import UpdateCategory from './admin/updateCategory/UpdateCategory';
 import Login from './login/Login';
 import NoMatch from './404/NoMatch';
 import User from './users/User';
+// Collections
 import AddCollections from './admin/Collections/AddCollections';
+import CardEditCollections from './admin/updateCollections/CardEditCollections';
+import UpdateCollections from './admin/updateCollections/UpdateCollections';
 
 function App() {
   return (
@@ -21,6 +24,8 @@ function App() {
           <Route path="/edit" component={CardEditCategory} />
           {/* Collections */}
           <Route path="/addCollections" component={AddCollections} />
+          <Route path="/editCollect" component={CardEditCollections} />
+          <Route path="/editCollections/:idEdit" component={UpdateCollections} />
           <Route path="*">
             <NoMatch />
           </Route>
