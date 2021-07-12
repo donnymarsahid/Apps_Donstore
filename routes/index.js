@@ -30,7 +30,7 @@ router.post('/addCategory', (req, res, next) => {
   });
 });
 
-// Get Data Update
+// Get Data Update Category
 router.get('/editCategory/:idEdit', (req, res, next) => {
   const idEdit = req.params.idEdit;
   dbConnection.query('SELECT * FROM category WHERE id_category = ? ', idEdit, (err, results) => {
@@ -39,7 +39,7 @@ router.get('/editCategory/:idEdit', (req, res, next) => {
   });
 });
 
-// Update
+// Update Category
 router.put('/updateCategory/:idUpdate', (req, res, next) => {
   const idUpdate = req.params.idUpdate;
   const name = req.body.name;
@@ -59,7 +59,7 @@ router.delete('/delete/:idDelete', (req, res, next) => {
   });
 });
 
-// Get Leading Collections
+// Get Collections Collections
 router.get('/collections', (req, res, next) => {
   dbConnection.query('SELECT * FROM collections', (err, results) => {
     if (err) throw err;
@@ -67,17 +67,44 @@ router.get('/collections', (req, res, next) => {
   });
 });
 
-// Add Leading Collections
+// Add Collections Collections
 router.post('/addCollections', (req, res, next) => {
   const dataCollections = {
     name: req.body.name,
-    quantity: req.body.quantity,
-    price: req.body.price,
     images: req.body.images,
   };
   dbConnection.query('INSERT INTO collections SET ? ', dataCollections, (err, results) => {
     if (err) throw err;
     res.send({ message: 'Success Add Collection ' });
+  });
+});
+
+// Get Data Update Collections
+router.get('/editCollections/:idEdit', (req, res, next) => {
+  const idEdit = req.params.idEdit;
+  dbConnection.query('SELECT * FROM collections WHERE id_collection = ? ', idEdit, (err, results) => {
+    if (err) throw err;
+    res.send(results[0]);
+  });
+});
+
+// Update Collections
+router.put('/updateCollections/:idUpdate', (req, res, next) => {
+  const idUpdate = req.params.idUpdate;
+  const name = req.body.name;
+  const images = req.body.images;
+  dbConnection.query('UPDATE collections SET name = ? , images = ? WHERE id_collection = ?  ', [name, images, idUpdate], (err, results) => {
+    if (err) throw err;
+    res.send({ message: 'success updated collect' });
+  });
+});
+
+// Delete Collections
+router.delete('/deleteCollect/:idDelete', (req, res, next) => {
+  const idDelete = req.params.idDelete;
+  dbConnection.query('DELETE FROM collections WHERE id_collection = ? ', idDelete, (err, results) => {
+    if (err) throw err;
+    res.send('Success Delete Collect');
   });
 });
 
