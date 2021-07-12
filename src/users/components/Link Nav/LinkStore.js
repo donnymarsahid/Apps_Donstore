@@ -30,7 +30,9 @@ function LinkStore() {
             <div class="nav-images-sort-store">
               <div class="1">
                 <img src={store} />
-                <p className="text-uppercase">Donstore in jakarta city</p>
+                <p className="text-uppercase">
+                  <a href="#">Donstore in jakarta city</a>{' '}
+                </p>
               </div>
             </div>
           </div>

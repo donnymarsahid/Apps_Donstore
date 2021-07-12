@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import logo from './logo.svg';
 
 function Sidebar() {
   return (
@@ -8,7 +9,7 @@ function Sidebar() {
         <div class="sidebar-wrapper">
           <div class="logo">
             <Link to="/admin" class="simple-text" style={{ textDecoration: 'none' }}>
-              DONSTORE
+              <img src={logo} alt="donstore" width="80%" />
             </Link>
           </div>
           <ul class="nav">

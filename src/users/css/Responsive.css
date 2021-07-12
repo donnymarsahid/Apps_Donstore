@@ -107,4 +107,14 @@
   #details-store.showDetailsStore {
     transform: translateY(0);
   }
+  .link-nav a {
+    text-decoration: none;
+    color: #3e3d3d;
+  }
+  .nav-images-sort a {
+    color: #3e3d3d;
+  }
+  .details-store a {
+    color: #3e3d3d;
+  }
 }
