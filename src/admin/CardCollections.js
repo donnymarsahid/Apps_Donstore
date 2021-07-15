@@ -1,7 +1,11 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
+import moment from 'moment';
 
 function CardCategory({ collections, number }) {
+  // Forma Datet
+  const dateFormatedCreate = moment(collections.created_at).subtract(10, 'days').calendar();
+  const dateFormatedUpdate = moment(collections.update_at).subtract(10, 'days').calendar();
   // Access Token
   const token = localStorage.getItem('token');
   if (!token) {
@@ -12,8 +16,8 @@ function CardCategory({ collections, number }) {
       <tr>
         <td>{number}</td>
         <td>{collections.name}</td>
-        <td>{collections.created_at}</td>
-        <td>{collections.update_at}</td>
+        <td>{dateFormatedCreate}</td>
+        <td>{dateFormatedUpdate}</td>
         <td>
           <img src={`http://localhost:3001/collections/${collections.images}`} width="50%" />
         </td>
