@@ -19,11 +19,6 @@ function LinkCategory() {
       }
     );
   });
-  $(document).ready(function () {
-    $('.link-category').on('click', () => {
-      $('#details-nav').toggleClass('showDetailsNav');
-    });
-  });
   return (
     <>
       <nav class="details fixed-top" id="details-nav">

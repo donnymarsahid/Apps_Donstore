@@ -17,11 +17,6 @@ function LinkStore() {
       }
     );
   });
-  $(document).ready(function () {
-    $('.link-store').on('click', () => {
-      $('#details-store').toggleClass('showDetailsStore');
-    });
-  });
   return (
     <>
       <nav class="details-store fixed-top" id="details-store">
