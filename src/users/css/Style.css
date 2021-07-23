@@ -159,6 +159,7 @@ nav {
 .jumbotron-content .container-carousel .content .btn {
   padding: 10px 30px;
   border: 2px solid white;
+  color: white;
 }
 .jumbotron-content .container-carousel .content .btn:hover {
   border: 2px solid white;

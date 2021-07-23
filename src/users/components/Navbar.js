@@ -23,7 +23,9 @@ function Navbar() {
             </h3>
           </div>
           <div class="logo-nav-link">
-            <img src={logo} alt="donstore" className="donstore" />
+            <a href="/">
+              <img src={logo} alt="donstore" className="donstore" />
+            </a>
             <div class="link">
               <p className="link-category">Category</p>
               <p className="link-store">Store</p>

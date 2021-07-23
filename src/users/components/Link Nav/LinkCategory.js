@@ -3,6 +3,7 @@ import svg1 from '../../img/1.svg';
 import svg2 from '../../img/2.svg';
 import svg3 from '../../img/3.svg';
 import $ from 'jquery';
+import { Link } from 'react-router-dom';
 
 function LinkCategory() {
   $(document).ready(function () {
@@ -28,16 +29,16 @@ function LinkCategory() {
               <div class="link-nav">
                 <p className="text-uppercase fw-bolder">shop by category</p>
                 <p className="text-uppercase">
-                  <a href="/">all</a>
+                  <Link to="/comingsoon">all</Link>
                 </p>
                 <p className="text-uppercase">
-                  <a href="/">men tops</a>
+                  <Link to="/comingsoon">men tops</Link>
                 </p>
                 <p className="text-uppercase">
-                  <a href="/">man</a>
+                  <Link to="/comingsoon">man</Link>
                 </p>
                 <p className="text-uppercase">
-                  <a href="/">jacket</a>
+                  <Link to="/comingsoon">jacket</Link>
                 </p>
               </div>
             </div>
@@ -45,19 +46,19 @@ function LinkCategory() {
               <div class="1">
                 <img src={svg1} alt="category" />
                 <p className="text-uppercase">
-                  <a href="/">men tops</a>
+                  <Link to="/comingsoon">men tops</Link>
                 </p>
               </div>
               <div class="2">
                 <img src={svg2} alt="category" />
                 <p className="text-uppercase">
-                  <a href="/">man</a>
+                  <Link to="/comingsoon">man</Link>
                 </p>
               </div>
               <div class="3">
                 <img src={svg3} alt="category" />
                 <p className="text-uppercase">
-                  <a href="/">all</a>
+                  <Link to="/comingsoon">all</Link>
                 </p>
               </div>
             </div>

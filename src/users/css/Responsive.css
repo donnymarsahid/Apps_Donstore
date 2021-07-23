@@ -1,5 +1,5 @@
 /* Mobile Start */
-@media (max-width: 576px) {
+@media (max-width: 767px) {
   .profile,
   .logo-nav-link .link {
     display: none;
@@ -50,11 +50,38 @@
   #details-store.showDetailsNav {
     display: none;
   }
+  .collections .col-md-3 {
+    width: 50%;
+  }
+  h3.textHeading {
+    font-size: 18px !important;
+  }
+  .text-category h3:after {
+    display: inline-block;
+    margin: 0 0 8px 20px;
+    height: 5px;
+    content: ' ';
+    text-shadow: none;
+    background-color: #3e3d3d00 !important;
+    width: 140px;
+  }
+  .text-collection h3:after {
+    display: inline-block;
+    margin: 0 0 8px 20px;
+    height: 5px;
+    content: ' ';
+    text-shadow: none;
+    background-color: #3e3d3d00 !important;
+    width: 140px;
+  }
 }
-/* Mobile End */
-@media (min-width: 576px) {
+
+@media (min-width: 768px) {
   .hamburger-menu {
     display: none;
+  }
+  .offcanvas {
+    display: none !important;
   }
   .basket {
     display: flex;

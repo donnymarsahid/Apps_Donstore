@@ -1,6 +1,7 @@
 import React from 'react';
 import store from '../../img/store.svg';
 import $ from 'jquery';
+import { Link } from 'react-router-dom';
 
 function LinkStore() {
   $(document).ready(function () {
@@ -26,7 +27,7 @@ function LinkStore() {
               <div class="1">
                 <img src={store} alt="store" />
                 <p className="text-uppercase">
-                  <a href="/">Donstore in jakarta city</a>{' '}
+                  <Link to="/comingsoon">Donstore in jakarta city</Link>{' '}
                 </p>
               </div>
             </div>
