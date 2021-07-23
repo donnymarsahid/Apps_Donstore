@@ -25,13 +25,9 @@ function Navbar() {
           <div class="logo-nav-link">
             <img src={logo} alt="donstore" className="donstore" />
             <div class="link">
-              <a className="link-category" href="/">
-                Category
-              </a>
-              <a className="link-store" href="/">
-                Store
-              </a>
-              <a href="/">Collection</a>
+              <p className="link-category">Category</p>
+              <p className="link-store">Store</p>
+              <p>Collection</p>
             </div>
           </div>
           <div class="basket basket-icons">

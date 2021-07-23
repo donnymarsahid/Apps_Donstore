@@ -44,9 +44,7 @@ function User() {
       <div class="jumbotron text-center">
         <h3 class="display-4">ONLY HERE !</h3>
         <p>Various kinds of fashion are here</p>
-        <a class="btn btn-lg" href="/">
-          SHOW NOW
-        </a>
+        <p class="btn btn-lg">SHOW NOW</p>
       </div>
       {/* Jumbotron End */}
       {/* Collections Start */}
@@ -77,9 +75,7 @@ function User() {
             <Carousel.Caption className="container-carousel">
               <div class="content">
                 <h3>fashion brand available</h3>
-                <a class="btn btn-lg" href="/">
-                  for women
-                </a>
+                <p class="btn btn-lg text-light">for women</p>
               </div>
             </Carousel.Caption>
           </Carousel.Item>
@@ -88,9 +84,7 @@ function User() {
             <Carousel.Caption className="container-carousel">
               <div class="content">
                 <h3>fashion brand available</h3>
-                <a class="btn btn-lg" href="/">
-                  for man
-                </a>
+                <p class="btn btn-lg text-light">for man</p>
               </div>
             </Carousel.Caption>
           </Carousel.Item>

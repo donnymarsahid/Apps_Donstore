@@ -30,10 +30,14 @@ nav {
 .logo-nav-link .link a {
   cursor: pointer;
 }
-.logo-nav-link .link a {
+.logo-nav-link .link p,
+.logo-nav-link .link p::after {
   cursor: pointer;
+  display: block;
+  content: '';
+  border-bottom: 1px solid rgba(0, 0, 0, 0);
 }
-.link a:hover::after {
+.link p:hover::after {
   display: block;
   content: '';
   border-bottom: 1px solid #3e3d3d;
