@@ -19,7 +19,7 @@ function CardCategory({ collections, number }) {
         <td>{dateFormatedCreate}</td>
         <td>{dateFormatedUpdate}</td>
         <td>
-          <img src={`http://localhost:3001/collections/${collections.images}`} width="50%" />
+          <img src={`http://localhost:3001/collections/${collections.images}`} width="50%" alt={collections.images} />
         </td>
       </tr>
     </>

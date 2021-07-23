@@ -24,9 +24,9 @@ function LinkStore() {
           <div class="container-nav-details-store">
             <div class="nav-images-sort-store">
               <div class="1">
-                <img src={store} />
+                <img src={store} alt="store" />
                 <p className="text-uppercase">
-                  <a href="#">Donstore in jakarta city</a>{' '}
+                  <a href="/">Donstore in jakarta city</a>{' '}
                 </p>
               </div>
             </div>

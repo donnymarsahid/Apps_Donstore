@@ -40,6 +40,18 @@ function Sidebar() {
                 <p style={{ color: 'white', fontWeight: '500', fontSize: '15px' }}>Edit Collections</p>
               </Link>
             </li>
+            <hr style={{ backgroundColor: 'white' }} />
+            <li>
+              <Link class="nav-link" to="/itemsCollections">
+                <p style={{ color: 'white', fontWeight: '500', fontSize: '15px' }}>Items Collections</p>
+              </Link>
+            </li>
+            <hr style={{ backgroundColor: 'white' }} />
+            <li>
+              <Link class="nav-link" to="/itemsCategory">
+                <p style={{ color: 'white', fontWeight: '500', fontSize: '15px' }}>Items Category</p>
+              </Link>
+            </li>
           </ul>
         </div>
       </div>

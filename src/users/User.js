@@ -25,10 +25,10 @@ function User() {
     setIndex(selectedIndex);
   };
 
-  useEffect(async () => {
-    const response = await api.get('/category/');
-    setDataCategory(response.data);
-    console.log(response);
+  useEffect(() => {
+    api.get('/category/').then((response) => {
+      setDataCategory(response.data);
+    });
   }, []);
 
   api.get('/collections/').then((response) => {
@@ -44,7 +44,9 @@ function User() {
       <div class="jumbotron text-center">
         <h3 class="display-4">ONLY HERE !</h3>
         <p>Various kinds of fashion are here</p>
-        <a class="btn btn-lg">SHOW NOW</a>
+        <a class="btn btn-lg" href="/">
+          SHOW NOW
+        </a>
       </div>
       {/* Jumbotron End */}
       {/* Collections Start */}
@@ -75,7 +77,9 @@ function User() {
             <Carousel.Caption className="container-carousel">
               <div class="content">
                 <h3>fashion brand available</h3>
-                <a class="btn btn-lg">for women</a>
+                <a class="btn btn-lg" href="/">
+                  for women
+                </a>
               </div>
             </Carousel.Caption>
           </Carousel.Item>
@@ -84,7 +88,9 @@ function User() {
             <Carousel.Caption className="container-carousel">
               <div class="content">
                 <h3>fashion brand available</h3>
-                <a class="btn btn-lg">for man</a>
+                <a class="btn btn-lg" href="/">
+                  for man
+                </a>
               </div>
             </Carousel.Caption>
           </Carousel.Item>

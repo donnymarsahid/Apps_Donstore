@@ -25,9 +25,13 @@ function Navbar() {
           <div class="logo-nav-link">
             <img src={logo} alt="donstore" className="donstore" />
             <div class="link">
-              <a className="link-category">Category</a>
-              <a className="link-store">Store</a>
-              <a>Collection</a>
+              <a className="link-category" href="/">
+                Category
+              </a>
+              <a className="link-store" href="/">
+                Store
+              </a>
+              <a href="/">Collection</a>
             </div>
           </div>
           <div class="basket basket-icons">
@@ -45,16 +49,16 @@ function Navbar() {
             </div>
             <hr />
             <div class="offcanvas-body">
-              <a>Category</a>
+              <a href="/">Category</a>
               <br />
               <br />
-              <a>Store</a>
+              <a href="/">Store</a>
               <br />
               <br />
-              <a>Collection</a>
+              <a href="/">Collection</a>
               <br />
               <hr />
-              <a>Account</a>
+              <a href="/">Account</a>
             </div>
           </div>
           <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">

@@ -12,21 +12,20 @@ function Login() {
 
   const submitLogin = async (e) => {
     e.preventDefault();
-    const response = await api.post('/login', {
-      username: username,
-      password: password,
-    });
-    if (response.data.message) {
-      setStatusLogin(response.data.message);
-    } else {
-      localStorage.setItem('token', response.data.token);
-      setRedirect(true);
-    }
+    await api
+      .post('/login', {
+        username: username,
+        password: password,
+      })
+      .then((response) => {
+        if (response.data.message) {
+          setStatusLogin(response.data.message);
+        } else {
+          localStorage.setItem('token', response.data.token);
+          setRedirect(true);
+        }
+      });
   };
-
-  api.get('/category/').then((response) => {
-    console.log(response);
-  });
 
   return (
     <Fragment>
@@ -37,7 +36,6 @@ function Login() {
             <div class="login100-pic js-tilt" data-tilt>
               <img src="./assetsLogin/images/img-01.png" alt="IMG" />
             </div>
-
             <form class="login100-form validate-form" onSubmit={submitLogin}>
               <span class="login100-form-title">Admin Login</span>
               {statusLogin && (
@@ -45,7 +43,6 @@ function Login() {
                   {statusLogin}
                 </div>
               )}
-
               <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
                 <input
                   class="input100"
@@ -85,13 +82,13 @@ function Login() {
 
               <div class="text-center p-t-12">
                 <span class="txt1">Forgot</span>
-                <a class="txt2" href="#">
+                <a class="txt2" href="/">
                   Username / Password?
                 </a>
               </div>
 
               <div class="text-center p-t-136">
-                <a class="txt2" href="#">
+                <a class="txt2" href="/">
                   Create your Account
                   <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
                 </a>

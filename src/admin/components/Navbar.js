@@ -28,9 +28,6 @@ function Navbar() {
                 </Link>
               </li>
               <li class="nav-item dropdown">
-                <Link class="nav-link dropdown-toggle" to="/admin" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <span class="no-icon">Dropdown</span>
-                </Link>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                   <Link class="dropdown-item" to="/admin">
                     Action

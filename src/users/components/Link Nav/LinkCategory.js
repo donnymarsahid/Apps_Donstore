@@ -28,36 +28,36 @@ function LinkCategory() {
               <div class="link-nav">
                 <p className="text-uppercase fw-bolder">shop by category</p>
                 <p className="text-uppercase">
-                  <a href="#">all</a>
+                  <a href="/">all</a>
                 </p>
                 <p className="text-uppercase">
-                  <a href="#">women</a>
+                  <a href="/">men tops</a>
                 </p>
                 <p className="text-uppercase">
-                  <a href="#">man</a>
+                  <a href="/">man</a>
                 </p>
                 <p className="text-uppercase">
-                  <a href="#">jacket</a>
+                  <a href="/">jacket</a>
                 </p>
               </div>
             </div>
             <div class="nav-images-sort">
               <div class="1">
-                <img src={svg1} />
+                <img src={svg1} alt="category" />
                 <p className="text-uppercase">
-                  <a href="#">women</a>
+                  <a href="/">men tops</a>
                 </p>
               </div>
               <div class="2">
-                <img src={svg2} />
+                <img src={svg2} alt="category" />
                 <p className="text-uppercase">
-                  <a href="#">man</a>
+                  <a href="/">man</a>
                 </p>
               </div>
               <div class="3">
-                <img src={svg3} />
+                <img src={svg3} alt="category" />
                 <p className="text-uppercase">
-                  <a href="#">all</a>
+                  <a href="/">all</a>
                 </p>
               </div>
             </div>
